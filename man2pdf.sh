@@ -9,6 +9,10 @@
 #First create directory if not already
 mkdir -p $HOME/man2pdf
 DIR="$HOME/man2pdf/"
+#Make sure man file is entered for processing
+MANFILES=${@-text}
+[ $# -eq 0 ] && { echo "Usage: $0 manfile" ; exit 1; }
+echo "Converting $MANFILES..."
 MANFILES="$@"
 
 
